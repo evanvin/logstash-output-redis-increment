@@ -3,8 +3,8 @@ Gem::Specification.new do |s|
   s.version       = '0.1.0'
   s.licenses      = ['Apache-2.0']
   s.summary       = 'Logstash Output Plugin for RedisIncrement'
-  s.description   = 'TODO: Write a longer description or delete this line.'
-  s.homepage      = 'TODO: Put your plugin''s website or public repo URL here.'
+  s.description   = 'Logstash Redis Output plugin for incrementing a key from each event.'
+  s.homepage      = 'https://github.com/evanvin/logstash-output-redis-increment'
   s.authors       = ['Evan Vinciguerra']
   s.email         = 'evanv511@gmail.com'
   s.require_paths = ['lib']
