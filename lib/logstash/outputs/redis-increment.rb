@@ -31,7 +31,7 @@ class LogStash::Outputs::Redis < LogStash::Outputs::Base
 
   public
   def register
-    require "redis-clustering"
+    require "redis"
     @redis = nil
     @codec.on_event(&method(:send_to_redis))
   end # def register
@@ -53,10 +53,13 @@ class LogStash::Outputs::Redis < LogStash::Outputs::Base
 
   private
   def connect
+    @current_host, @current_port = @host.split(':')
+
     if @cluster
-      Redis.new(cluster:@host)
+      node_list = Array.new
+      node_list << "redis://#{@host}"
+      Redis.new(cluster:node_list)
     else
-        @current_host, @current_port = @host.split(':')
         params = {
           :host => @current_host,
           :port => @current_port,
