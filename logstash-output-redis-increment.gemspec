@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name          = 'logstash-output-redis-increment'
-  s.version       = '0.1.0'
+  s.version       = '1.2.0'
   s.licenses      = ['Apache-2.0']
   s.summary       = 'Logstash Output Plugin for RedisIncrement'
   s.description   = 'Logstash Redis Output plugin for incrementing a key from each event.'
@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
 
   # Gem dependencies
   s.add_runtime_dependency "logstash-core-plugin-api", "~> 2.0"
+  s.add_runtime_dependency 'redis', '~> 4'
   s.add_runtime_dependency "logstash-codec-plain"
   s.add_development_dependency "logstash-devutils"
 end
